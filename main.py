@@ -19,7 +19,7 @@ def checkPrice():
     converted_price = float(rmvE[0:].replace(',', ''))
     print(title.get_text().strip())
     print(converted_price)
-    originalPrice = input('Insert the original price: ')
+    originalPrice = input('Insert the original price(as showed above, but without ".0"): ')
     if converted_price < originalPrice :
         sendMail()
 
@@ -33,7 +33,7 @@ def sendMail():
     server.login('email1', 'pass')
 
     subject = 'Price Fell Down!'
-    body = f'The price is {rmvE}€, check amazon Link: {URL}'
+    body = f'Check amazon Link: {URL}'
 
     msg = f"Subject: {subject}\n\n{body}"
 
