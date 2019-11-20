@@ -18,11 +18,11 @@ def checkPrice():
     rmvE = price.get_text().replace('€','')
     converted_price = float(rmvE[0:].replace(',', ''))
 
-if converted_price < 44900 :
-    sendMail()
+    if converted_price < 44900 :
+        sendMail()
 
-print(title.get_text().strip())
-print(converted_price)
+    print(title.get_text().strip())
+    print(converted_price)
 
 def sendMail():
     server = smtplib.SMTP('smtp.live.com', 587)
@@ -31,7 +31,7 @@ def sendMail():
     server.ehlo()
 
     
-    server.login('', '')
+    server.login('email1', 'pass')
 
     subject = 'Price Fell Down!'
     body = f'The price is {rmvE}€, check amazon Link: {URL}'
@@ -39,8 +39,8 @@ def sendMail():
     msg = f"Subject: {subject}\n\n{body}"
 
     server.sendmail(
-        '',
-        '',
+        'email1',
+        'email2',
         msg 
     )
 
