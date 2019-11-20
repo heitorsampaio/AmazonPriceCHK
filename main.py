@@ -17,12 +17,11 @@ def checkPrice():
     price = soup.find(id='priceblock_ourprice')
     rmvE = price.get_text().replace('€','')
     converted_price = float(rmvE[0:].replace(',', ''))
-
-    if converted_price < 44900 :
-        sendMail()
-
     print(title.get_text().strip())
     print(converted_price)
+    originalPrice = input('Insert the original price: ')
+    if converted_price < originalPrice :
+        sendMail()
 
 def sendMail():
     server = smtplib.SMTP('smtp.live.com', 587)
