@@ -3,7 +3,7 @@ This script basic scrape amazon product every 1 hour to check if the price drops
 
 # Configure Script
 ```
-You need to open the main.py file and insert your email, pass and the server (gmail,hotmail...)
+You need to open the main.py file and insert your email, pass and the server (gmail,hotmail...) and the price you want
 ```
 
 # How to Run?
